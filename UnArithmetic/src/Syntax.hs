@@ -1,18 +1,18 @@
-module Syntax where
+module Syntax (
+    eval,
+    eval1,
+    Term(..) ) where
 
 import Control.Monad
 
--- | The extra information attached to a node (eg. source file, line number)
-type Err = String
-
 data Term
-    = TmFalse
-    | TmTrue
-    | TmIf Term Term Term
-    | TmZero
-    | TmSucc Term
-    | TmPred Term
-    | TmIsZero Term
+    = TmFalse               -- | false value
+    | TmTrue                -- | true value
+    | TmIf Term Term Term   -- | if t1 then t2 else t3
+    | TmZero                -- | zero value
+    | TmSucc Term           -- | successor
+    | TmPred Term           -- | predecesor
+    | TmIsZero Term         -- | iszero t
     deriving Show
 
 -- | Returns True if the term is a numerical value.
