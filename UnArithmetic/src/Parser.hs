@@ -1,4 +1,4 @@
-module Parser(parseTerm) where
+module Parser(peval, parseTerm) where
 
 import Syntax
 import Text.Parsec
@@ -58,3 +58,6 @@ parseTerm =
   parsePred   <|>
   parseIsZero <|>
   between (string "(") (string ")") parseTerm
+
+peval :: String -> Either ParseError Term
+peval s = eval <$> parse parseTerm "arith" s

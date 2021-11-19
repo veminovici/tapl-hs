@@ -1,17 +1,17 @@
 module Main where
 
-import Text.Parsec
+import Text.Parsec(ParseError)
 import Parser
 import Syntax
 
-peval :: String -> (String, Either ParseError Term)
-peval s = (s, eval <$> parse parseTerm "arith" s)
+pevaluate :: String -> (String, Either ParseError Term)
+pevaluate s = (s, peval s)
 
 showRes :: (String, Either ParseError Term) -> String
 showRes (s, e) = s ++ " ===> " ++ show e
 
 prnterm :: String -> String
-prnterm = showRes . peval
+prnterm = showRes . pevaluate
 
 main :: IO ()
 main = do
