@@ -24,6 +24,8 @@ dependencies:
 
 library:
   source-dirs: src
+  exposed-modules:
+    - Syntax
 
 executables:
   UnArithmetic-exe:
