@@ -6,8 +6,11 @@ module Context (
     freshVarName,
 ) where
 
+-- | de Bruijn index
 type DBIndex = Int
+-- | Hint for the name of the variable
 type Hint = String
+-- | Bund variable names
 type Context = [String]
 
 getVarName :: DBIndex -> Context -> String
