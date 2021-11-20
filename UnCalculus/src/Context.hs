@@ -26,5 +26,6 @@ mkFreshVarName hint ctx@(b:bs)
 
 freshVarName :: Hint -> Context -> (String, Context)
 freshVarName hint ctx =
-    let n = mkFreshVarName hint ctx in (n, bindVarName n ctx)
+    let n = mkFreshVarName hint ctx 
+    in (n, bindVarName n ctx)
 
