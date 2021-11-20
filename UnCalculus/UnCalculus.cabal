@@ -25,8 +25,10 @@ source-repository head
 
 library
   exposed-modules:
-      Lib
+      Syntax
   other-modules:
+      Context
+      Evaluator
       Paths_UnCalculus
   hs-source-dirs:
       src
