@@ -40,7 +40,7 @@ size (TmIsZero t) =  1 + size t
 depth :: Term -> Int
 depth TmFalse = 1
 depth TmTrue = 1
-depth (TmIf t1 t2 t3) = let xs = map depth [t1, t2, t3] in maximum xs
+depth (TmIf t1 t2 t3) = let xs = map depth [t1, t2, t3] in 1+ maximum xs
 depth TmZero = 1
 depth (TmSucc t) = 1 + depth t
 depth (TmPred t) = 1 + depth t
